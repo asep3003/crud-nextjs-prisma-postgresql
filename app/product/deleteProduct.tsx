@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { DeleteOutlined } from "@ant-design/icons";
 
 type Product = {
   id: number;
@@ -27,7 +28,7 @@ const DeleteProduct = ({ product }: {product: Product}) => {
 
   return (
     <div>
-      <button className="btn btn-error btn-sm" onClick={handleModal}>Delete</button>
+      <button className="btn btn-error btn-sm" onClick={handleModal}><DeleteOutlined /></button>
 
       <div className={isOpen ? 'modal modal-open' : 'modal'}>
         <div className="modal-box">

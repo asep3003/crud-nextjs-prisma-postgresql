@@ -3,6 +3,7 @@ import { SyntheticEvent, useState } from "react";
 import type { Brand } from "@prisma/client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { EditOutlined } from "@ant-design/icons";
 
 type Product = {
   id: number;
@@ -36,7 +37,7 @@ const UpdateProduct = ({ brands, product }: {brands: Brand[]; product: Product }
 
   return (
     <div>
-      <button className="btn btn-info btn-sm" onClick={handleModal}>Edit</button>
+      <button className="btn btn-info btn-sm" onClick={handleModal}><EditOutlined /></button>
 
       <div className={isOpen ? 'modal modal-open' : 'modal'}>
         <div className="modal-box">

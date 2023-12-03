@@ -1,8 +1,9 @@
 "use client"
 import { SyntheticEvent, useState } from "react";
+import { useRouter } from "next/navigation";
 import type { Brand } from "@prisma/client";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { PlusOutlined } from "@ant-design/icons";
 
 const AddProduct = ({ brands }: {brands: Brand[]}) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +33,7 @@ const AddProduct = ({ brands }: {brands: Brand[]}) => {
 
   return (
     <div>
-      <button className="btn" onClick={handleModal}>Add New</button>
+      <button className="btn" onClick={handleModal}><PlusOutlined /> Add New</button>
 
       <div className={isOpen ? 'modal modal-open' : 'modal'}>
         <div className="modal-box">
